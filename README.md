@@ -10,3 +10,5 @@
 - terraform apply
 - terraform apply -auto-approve
 - terraform destroy
+
+# FIXME - explain the script
