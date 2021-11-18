@@ -13,7 +13,7 @@ provider "aws" {
 
 module "webserver" {
   source = "../../modules/webserver"
-  env = ""
+  env = "test"
   ec2_instance_type = "t2.nano"
   ec2_key_name = "test_key_pair"
   ec2_subnet_id = "subnet-a29bd2cb"

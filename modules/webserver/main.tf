@@ -1,17 +1,14 @@
 resource "aws_instance" "webserver_instance" {
-  name = "${var.env}-webserver"
-
   ami = "${var.ec2_ami_id}"
   instance_type = "${var.ec2_instance_type}"
   key_name = "${var.ec2_key_name}"
-  vpc_security_group_ids = [
-    "${var.vpc_security_group_ids}"]
+  vpc_security_group_ids = "${var.vpc_security_group_ids}"
   subnet_id = "${var.ec2_subnet_id}"
   monitoring = true
 
   tags = {
     Terraform = "true"
-    Environment = "dev"
+    Environment = "${var.env}"
     Name = "${var.env}-webserver"
   }
 }
