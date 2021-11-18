@@ -27,3 +27,4 @@ variable "vpc_security_group_ids" {
   description = "vpc security group ids"
   type        = list(string)
 }
+
