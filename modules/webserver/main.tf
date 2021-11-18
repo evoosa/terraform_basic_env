@@ -1,3 +1,4 @@
+# Create EC2 instance
 resource "aws_instance" "webserver_instance" {
   ami = "${var.ec2_ami_id}"
   instance_type = "${var.ec2_instance_type}"
@@ -19,7 +20,7 @@ resource "random_password" "rds_password" {
   special = false
 }
 
-
+# Create DB
 resource "aws_db_instance" "webserver_db" {
   identifier = "${var.env}-db"
 
@@ -39,7 +40,7 @@ resource "aws_db_instance" "webserver_db" {
   publicly_accessible = true
   maintenance_window = "Mon:00:00-Mon:03:00"
   backup_window = "03:00-06:00"
-
+  skip_final_snapshot = true
   tags = {
     Name = "${var.env}-db"
     Environment = "${var.env}"

@@ -1,10 +1,12 @@
 # Load Credentials
 
 - aws configure --profile terraform
-- AWS_PROFILE=terraform
+- export AWS_PROFILE=terraform
 
 # Terraform Commands
 
 - terraform init
 - terraform plan
 - terraform apply
+- terraform apply -auto-approve
+- terraform destroy
